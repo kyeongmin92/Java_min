@@ -26,7 +26,7 @@ public class Exam06_2 {
 				break;
 			}
 		}		
-		System.out.println("컴퓨터 랜덤 숫자 : "+num[0]*10+num[1]);
+		System.out.println("컴퓨터 랜덤 숫자 : "+(num[0]*10+num[1]));
 		
 		int[] num2 = new int[2];
 		Scanner scan = new Scanner(System.in);

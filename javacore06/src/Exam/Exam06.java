@@ -42,7 +42,7 @@ public class Exam06 {
 				num2[0] = input / 10;  // 10의 자리
 				num2[1] = input % 10;  // 1의 자리
 				
-				if(input>10 && input < 100)
+				if(input>=10 && input <=99)
 				{					
 					if(num2[0]!=num2[1]) {
 						break;

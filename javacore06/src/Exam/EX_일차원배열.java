@@ -19,25 +19,24 @@ public class EX_일차원배열 {
 		
 		int[] avg = { 85, 79, 83, 80, 78, 75};
 		Scanner scan = new Scanner(System.in);
-		int sum =0;
+		
+		System.out.print("첫번째 반 입력: ");
 		int input = scan.nextInt();
-		for(int i=0; i<avg.length; i++) {
-			System.out.println("숫자를 입력하세요: ");
-			input = avg[i];
-			   if(input==0) {
-				   System.out.println(avg[0]);
-			   } else if (input==1) {
-				   System.out.println(avg[1]);
-			   } else if (input==2) {
-				   System.out.println(avg[2]);
-			   } else if (input==3) {
-				   System.out.println(avg[3]);
-			   }  else if (input==4) {
-				   System.out.println(avg[4]);
-			   }  else  {
-				   System.out.println(avg[5]);
-			   }
+		System.out.print("두번째 반 입력: ");
+		int input2 = scan.nextInt();
+		
+		for(int i=0; i<avg.length; i++) {			
+			if(input==i+1) {
+				input = avg[i];
+			}
 		}
+		
+		for(int i=0; i<avg.length; i++) {			
+			if(input2==i+1) {
+				input2 = avg[i];
+			}
+		}
+		System.out.println("평균 합: "+(input+input2));
 	
 		
 	}
