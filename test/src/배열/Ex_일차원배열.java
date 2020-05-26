@@ -15,7 +15,8 @@ public class Ex_일차원배열 {
 		첫번째반 : 1
 		두번째반 : 3
 		(주의점: 반번호, 배열번호 다름)
-		두반의 평균점수 합은:168 */
+		두반의 평균점수 합은:168 
+		--while문 사용*/
 		
 		int[] avg = { 85, 79, 83, 80, 78, 75};
 		Scanner scan = new Scanner(System.in);

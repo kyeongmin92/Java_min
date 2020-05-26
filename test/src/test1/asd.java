@@ -4,10 +4,25 @@ package test1;
 public class asd {
 
 	public static void main(String[] args) {
-		int x = -100;
-	      int result1 = +x;
-	      int result2 = -x;
-	      System.out.println(result2);
+	      for(int i = 0; i < 5; i++){
+	          for(int j = 1; j < 5 - i; j++){
+	             System.out.print(" "); 
+	          }
+	          for(int j = 0; j < 2 * i + 1; j++){
+	             System.out.print("*"); 
+	          }
+	          System.out.println("");
+	       }
+	       
+	       for(int i = 0; i < 5; i++){
+	          for(int j = 10; j > 9 - i; j--){
+	             System.out.print(" "); 
+	          }
+	          for(int j = 8; j > 2 * i + 1; j--){
+	             System.out.print("*"); 
+	          }
+	          System.out.println("");
+	       }
 	      
 	}
 
