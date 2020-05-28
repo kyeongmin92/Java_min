@@ -6,6 +6,7 @@ public class Star1 {
 		/*  중첩 for문 이용해서  출력
 		      *
 		     **
+		     *
 		    ***
 		   ****
 		  *****     */
@@ -15,9 +16,9 @@ public class Star1 {
 	    	for(int j=4; j>i; j--) {
 	    		System.out.print(" ");
 	    	}
-	    		for(int k=0; k<=i; k++) {
-	    			System.out.print("*");
-	    	}	    	
+	    	for(int k=0; k<=i; k++) {
+    			System.out.print("*");
+    	}	    	
 	    	System.out.println();
 	    }
 

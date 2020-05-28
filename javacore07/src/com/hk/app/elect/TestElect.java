@@ -28,7 +28,7 @@ public class TestElect {
 		scar.Accelate(5);
 		System.out.println("스카의 속도="+scar.vel);
 		scar.Break();
-		System.out.println("차량 brak="+scar.vel);
+		System.out.println("차량 break="+scar.vel);
 		
 		ElectCar etruk = new ElectCar();
 		etruk.col ="gray";
