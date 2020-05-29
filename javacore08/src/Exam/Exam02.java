@@ -10,11 +10,11 @@ public class Exam02 {
 		출력할 단은 :3    */
 		Scanner scan = new Scanner(System.in);
 		System.out.print("단을 입력하세요: ");
-		System.out.println(gugudan(scan.nextInt()));
+		gugudan(scan.nextInt());
 		
 	
 	}
-	public static int gugudan (int dan) {
+	public static void gugudan (int dan) {
 		
 				
 		for(int i=dan; i<=dan; i++) {
@@ -24,7 +24,6 @@ public class Exam02 {
 			}
 			
 		}
-		return 0;
 		// 리턴값 ?
 	}
 }

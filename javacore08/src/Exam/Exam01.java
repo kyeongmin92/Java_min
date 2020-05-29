@@ -18,10 +18,10 @@ public class Exam01 {
 	public static String Java(String j) {
 		
 				
-		for(int i=0; i<4; i++) {
+		for(int i=0; i<5; i++) {
 			System.out.println("Java Funtion");
 		}
-		return "Java Funtion";
+		return " ";
 	}
 
 }

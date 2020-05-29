@@ -20,10 +20,10 @@ public class Exam01_2 {
 		Scanner scan = new Scanner(System.in);
 		int num = scan.nextInt();
 		
-		for(int i=0; i<num-1; i++) {
+		for(int i=0; i<num; i++) {
 			System.out.println("Java Funtion");
 		}
-		return "Java Funtion";
+		return " ";
 	}
 
 }

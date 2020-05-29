@@ -12,5 +12,31 @@ public class Exam05 {
 	브랜드명, 색상, 화면크기를 정할 수 있는 함수를 가진다
 	SetBrand(brand),SetColor(color),SetSize(size)
 	*/
+	
+	String brand;
+	String color;
+	double size;
+	
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public double getSize() {
+		return size;
+	}
+	public void setSize(double size) {
+		this.size = size;
+	}
+	
+	
+	
 
 }
