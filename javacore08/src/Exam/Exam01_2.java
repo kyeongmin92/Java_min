@@ -11,11 +11,11 @@ public class Exam01_2 {
 			
 		
 		System.out.print("출력할 횟수 입력: ");
-		System.out.println(Java(x));	
+		Java(x);
 		
 
 	}
-	public static String Java(String j) {
+	public static void Java(String j) {
 		
 		Scanner scan = new Scanner(System.in);
 		int num = scan.nextInt();
@@ -23,7 +23,7 @@ public class Exam01_2 {
 		for(int i=0; i<num; i++) {
 			System.out.println("Java Funtion");
 		}
-		return " ";
+		
 	}
 
 }
