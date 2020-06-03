@@ -2,11 +2,12 @@ package com.hk.app.exam_java;
 
 public class CalcUtils {
 	
-	
+	//필드
 	int left;
 	int right;
 	int third;
 	
+	//메소드
 	 void setOprands(int left, int right) {
 		this.left = left;
 		this.right = right;
@@ -17,16 +18,23 @@ public class CalcUtils {
 		this.right = right;
 		this.third = third;
 	}
-
-	 void sum() {		
-		System.out.println(left+right+third);
+	 
+    
+	 void sum() {
+		
+		 System.out.println(left+right+third);		
 	}
 	
 	
+	
 	 void avg() {
-		
-		System.out.println((left+right+third)/3);		
-	}	
+		 
+		 if (third==0) {
+			 System.out.println((left+right)/2);
+		 } else {
+			 System.out.println((left+right+third)/3);
+		 }		
+	}	 
 	
 
 

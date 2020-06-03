@@ -13,11 +13,11 @@ public class NewCalcUtils extends CalcUtils{
 	
 public static void main(String[] args) {
 		
-		NewCalcUtils c2 = new NewCalcUtils();
-		c2.setOprands(10, 20);
-		c2.sum();
-		c2.avg();
-		c2.substract();		
+		NewCalcUtils c1 = new NewCalcUtils();
+		c1.setOprands(10, 20);
+		c1.sum();
+		c1.avg();
+		c1.substract();		
 	} 
 
 }

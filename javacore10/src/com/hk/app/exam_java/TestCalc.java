@@ -6,8 +6,8 @@ public class TestCalc {
 		
 		CalcUtils c1 = new CalcUtils();
 		c1.setOprands(10,20);
-		c1.sum(); // 제대로 안나옴
-		c1.avg();
+		c1.sum(); 
+		c1.avg(); // 제대로 안나옴
 		c1.setOprands(10,20,30);
 		c1.sum();
 		c1.avg();

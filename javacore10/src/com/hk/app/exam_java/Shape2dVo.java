@@ -4,6 +4,7 @@ public class Shape2dVo {
 	
 	static int x;
 	static int y;
+	//생성자
 	void Shape2dVo(int x, int y) {
 		this.x = x;
 		this.y = y;
