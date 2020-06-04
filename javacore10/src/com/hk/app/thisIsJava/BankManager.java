@@ -21,7 +21,7 @@ public class BankManager {
 	
 	boolean CreateAccount(String acnt, String name, double money)
 	{
-		if(acnt.length() > 1 && name.length() > 1 && money > 1)
+		if(acnt.length() > 0 && name.length() > 0 && money > 0)
 		{
 			B_user[m_curr].SetData(acnt, name, money);			
 			m_curr++;

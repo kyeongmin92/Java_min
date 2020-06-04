@@ -66,11 +66,9 @@ public class BankApplication {
 	      for(int i=0; i<accountArray.length; i++) {
 	         Account account = accountArray[i];
 	         if(account !=null) {
-	            System.out.print(account.getAno());
-	            System.out.print("   ");
-	            System.out.print(account.getOwner());
-	            System.out.print("   ");
-	            System.out.print(account.getBalance());
+	            System.out.print(account.getAno()+"\t");	            
+	            System.out.print(account.getOwner()+"\t");	            
+	            System.out.print(account.getBalance()+"\t");
 	            System.out.println();
 	         }
 	      }
