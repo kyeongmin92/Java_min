@@ -2,7 +2,7 @@ package com.hk.app.exam;
 
 import java.util.Scanner;
 
-public class Exam02 {
+public class Exam02_2 {
 
 	public static void main(String[] args) {
 		/* 첫번째는 영어로 문장을 입력 받아서 String 변수 english에 저장
@@ -16,28 +16,19 @@ public class Exam02 {
 		
 		int consonant = 0; // 모음 갯수
 		int vowel = 0;  // 자음 갯수
-		int blank =0; // 공백 갯수
-		for(int i=0; i<english.length(); i++) {
-			switch(english.charAt(i)) {
-			case 'a' :
-			case 'e' :
-			case 'i' :
-			case 'o' :
-			case 'u' :
-				consonant++;
-			break;
-			default:
-				if('a'<=english.charAt(i) && english.charAt(i)<='z') {
-					vowel++;
-				} else {
-					blank++;
-				}
-			}
-		}
+		int blank =0;
 		
-		System.out.println("모음의 갯수: "+ consonant);
-		System.out.println("자음의 갯수: "+vowel);
-		System.out.println("공백의 갯수: "+blank);
+		for(int i=0; i<english.length(); i++) {
+			String eng =english.valueOf(english.charAt(i));
+	         if(eng.equals("a")||eng.equals("e")||
+	            eng.equals("i")||eng.equals("o")||
+	            eng.equals("u")) { consonant++;
+	         }else if(eng.equals(" ")) { blank++;
+	         }else vowel++;
+		}
+		System.out.println("모음의 갯수: "+ consonant+"개");
+		System.out.println("자음의 갯수: "+vowel+"개");
+		System.out.println("공백의 갯수: "+blank+"개");
 
 	}
 
