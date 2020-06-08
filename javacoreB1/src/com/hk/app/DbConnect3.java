@@ -22,7 +22,7 @@ public class DbConnect3 {
 			conn = DriverManager.getConnection(url, user, password);
 			// 접속 성공시 conn = 접속결과 객체값
 			stmt = conn.createStatement();
-			String newPwd = "admin1";
+			String newPwd = "admin2";
 			String ID = "admin";
 			String sql ="UPDATE WORKER SET PWD='" + newPwd + "' WHERE ID ='admin'";
 			//String sql2 ="UPDATE WORKER SET PWD='" + newPwd + "' WHERE ID ='"+ ID + "'";

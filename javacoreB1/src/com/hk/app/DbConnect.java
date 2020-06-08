@@ -48,7 +48,9 @@ public class DbConnect {
 			e2.printStackTrace();
 		} finally {
 			//
-			//if(rs!=null) {rs.close(); rs=null; //정리작업}
+			if(rs!=null) { try{rs.close(); rs=null;} catch(SQLException e) {} }
+			if(stmt!=null) { try{stmt.close(); stmt=null;} catch(SQLException e) {} }
+			if(conn!=null) { try{conn.close(); conn=null;} catch(SQLException e) {} }
 		}
 		
 		// getConnect 접속
