@@ -29,6 +29,8 @@ public class MyFrame1 extends JFrame{ // JFrame 으로 윈도우창을 생성
 		myCont.add(btn2);  // 컨테이너에 부착(add)
 		
 		myFm.setVisible(true);
+		
+		myFm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	}
 	

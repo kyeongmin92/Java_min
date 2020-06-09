@@ -1,6 +1,13 @@
 package com.hk.app.dao;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.hk.app.vo.*;
 
 public class WorkerDao {
 	
@@ -96,6 +103,31 @@ public class WorkerDao {
 		}
 		dbclose(); //디비종료
 		return rst;
+	}
+	
+	public WorkerVo getWorkerById(String id) {
+		WorkerVo temp = new WorkerVo();
+		
+		getconnect();
+		
+		try {
+			String sql="SELECT ID, PWD, NAME, PHONE FROM WORKER WHERE ID = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				temp.setId(rs.getString("ID"));
+				temp.setPwd(rs.getString("PWD"));
+				temp.setName(rs.getString("NAME"));
+				temp.setPhone(rs.getString("PHONE"));
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		dbclose();		
+		return temp;
 	}
 
 }
