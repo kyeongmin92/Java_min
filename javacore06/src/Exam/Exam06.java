@@ -57,9 +57,9 @@ public class Exam06 {
 			
 			//3 랜덤숫자와 입력숫자 비교
 			if(num[0]*10+num[1] > input) {
-				System.out.println(input + " 보다 컴퓨터 랜덤숫자가 입력숫자보다 큽니다!");
+				System.out.println(input + " 보다 컴퓨터 랜덤숫자가  큽니다!");
 			}else if(num[0]*10+num[1] <input) {
-				System.out.println(input + " 보다 컴퓨터 랜덤숫자가 입력숫자보다 작습니다!");
+				System.out.println(input + " 보다 컴퓨터 랜덤숫자가  작습니다!");
 			}else {
 				System.out.println("정답 맞습니다");
 				break;

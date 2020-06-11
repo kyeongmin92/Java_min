@@ -12,9 +12,9 @@ public class Exam_반복문04 {
 		Scanner scan = new Scanner(System.in);
 		int dan = scan.nextInt();
 		
-		for(int x =dan; x<=dan; x++) { System.out.println("*** "+x+"단  ***");
-			for(int y=1; y<10; y++) { 
-				
+		for(int x =dan; x<=dan; x++) { 
+			System.out.println("*** "+x+"단  ***");
+			for(int y=1; y<10; y++) { 				
 				System.out.println(x+"x"+y+"="+(x*y)); 
 			}
 			
