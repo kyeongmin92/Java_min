@@ -25,7 +25,7 @@ public class 배열_로또 {
 		}
 		// 배열 ball의 앞에서 부터 6개의 요소를 출력한다.
 		for(int i=0; i<6; i++) 
-			System.out.println(ball[i]+" ");			
+			System.out.print(ball[i]+" ");			
 
 	}
 
