@@ -19,7 +19,7 @@ public class VectorEx {
 		book.add(3, "javascript");
 		
 		for(int i=0; i<book.size();i++) {
-			System.out.println(book.get(i));
+			System.out.print(book.get(i)+" ");
 		}
 		System.out.println("총 개수="+book.size());
 		System.out.println("맨처음 데이터="+book.firstElement());
