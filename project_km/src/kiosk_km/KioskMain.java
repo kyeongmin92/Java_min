@@ -1,4 +1,4 @@
-package kiosk_2;
+package kiosk_km;
 
 import java.awt.GridLayout;
 

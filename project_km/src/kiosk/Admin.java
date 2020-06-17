@@ -1,4 +1,4 @@
-package kiosk_2;
+package kiosk;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -14,7 +14,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -22,43 +21,19 @@ import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
-public class ProductList extends JFrame implements ActionListener, MouseListener {
+public class Admin extends JFrame implements ActionListener, MouseListener {
 	KioskDao kioskDAO;
 	KioskVo kioskVO;
 
-//	JFrame frame = new JFrame(); // 프레임 선언
-//	JDialog dialog = new JDialog(frame, "관리자페이지"); // 다이얼로그 선언
-//	JPanel pan; // 패널 선언
 	JLabel jlKind, jlMenu, jlPrice; // 분류번호, 메뉴, 가격 라벨
 	JTextField jtKind, jtMenu, jtPrice; // 분류번호 , 메뉴, 가격 텍스트필드
 	JButton jbAdd, jbDel, jbChange; // 추가, 삭제, 수정 버튼
 
-	/*
-	 * JTextArea txtOrdered = new JTextArea(""); // 주문된 목록을 확인할 txtOrdered 선언
-	 * JScrollPane scrollpane = new JScrollPane(txtOrdered); // txtOrdered에
-	 * scrollbar를 만들어줌
-	 */
 // 테이블 - 데이터목록을 출력
 	JTable table;
 	Vector data, col;
 
-	 ProductList() {
-		/*dialog.setTitle("관리자 페이지");
-		dialog.setSize(1000, 700); // 다이얼로그의 크기 설정
-		dialog.setVisible(true); // 다이얼로그를 표시 해줌
-		dialog.setResizable(false); // 창 크기 조절 불가
-		dialog.setLocationRelativeTo(null); // 중앙에서 프레임 실행
-		dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);// X 버튼 누르면 다이얼로그만 종료
-		dialog.setContentPane(pan); // 일반적인 컴포넌트들을 가질 수 있는 패널
-*/
-		/*setTitle("관리자 페이지");
-		setSize(1000, 700); // 다이얼로그의 크기 설정
-		setVisible(true); // 다이얼로그를 표시 해줌
-		setResizable(false); // 창 크기 조절 불가
-		setLocationRelativeTo(null); // 중앙에서 프레임 실행
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);// X 버튼 누르면 다이얼로그만 종료
-*/	//	setContentPane(pan); // 일반적인 컴포넌트들을 가질 수 있는 패널
-		// txtOrdered.setEditable(false); // 수정하지 못하도록 설정
+	Admin() {		
 
 		setLayout(null); // 레이아웃에 속하지 않음
 		kioskDAO = new KioskDao();
@@ -109,13 +84,18 @@ public class ProductList extends JFrame implements ActionListener, MouseListener
 
 		// 컬럼 백터 - 테이블 상단 타이틀
 		// String[] col = new String[6];
+		
+		
+		
+		
+		
 		col = new Vector();
 		col.add("분류번호");
 		col.add("메뉴");
 		col.add("가격");
 
-		// 테이블 수정 못하게 DefaultTableModel 사용
-		DefaultTableModel model = new DefaultTableModel(kioskDAO.getProduct(), col) {
+		// 테이블 수정 못하게 DefaultTableModel 사용		
+		DefaultTableModel model = new DefaultTableModel( kioskDAO.getProduct(), col) {
 			public boolean isCellEditable(int row, int column) {
 				return false;
 			}
@@ -141,7 +121,7 @@ public class ProductList extends JFrame implements ActionListener, MouseListener
 	} // Admin 생성자 
 	 
 
-
+    // 마우스 클릭이벤트
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		int rowIndex = table.getSelectedRow();
@@ -226,7 +206,7 @@ public class ProductList extends JFrame implements ActionListener, MouseListener
 	} // actionPerformed
 
 	public void jTableRefresh() {
-		// 테이블 수정 못하게 DefaultTableModel 사용
+		// 테이블 수정 가능하게 DefaultTableModel 사용
 		DefaultTableModel model = new DefaultTableModel(kioskDAO.getProduct(), col) {
 			public boolean isCellEditable(int row, int column) {
 				return false;
@@ -237,10 +217,13 @@ public class ProductList extends JFrame implements ActionListener, MouseListener
 	} // jTableRefresh : 테이블 내용을 갱신하는 메서드
 	
 	public void jTableSet() {
-	    // 이동과 길이조절 여러개 선택 되는 것을 방지한다
+	   
 	    table.getTableHeader().setReorderingAllowed(false);
+	    // 테이블 컬럼의 이동 방지
 	    table.getTableHeader().setResizingAllowed(false);
+	    // 테이블 컬럼의 사이즈 고정
 	    table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+	    //테이블 로우를 한개만 선택
 	     
 	    // 컬럼 정렬에 필요한 메서드
 	    DefaultTableCellRenderer celAlignCenter = new DefaultTableCellRenderer();
@@ -250,19 +233,7 @@ public class ProductList extends JFrame implements ActionListener, MouseListener
 	    DefaultTableCellRenderer celAlignLeft = new DefaultTableCellRenderer();
 	    celAlignLeft.setHorizontalAlignment(JLabel.LEFT);
 	     
-	    // 컬럼별 사이즈 조절 & 정렬
-	    /*table.getColumnModel().getColumn(0).setPreferredWidth(10);
-	    table.getColumnModel().getColumn(0).setCellRenderer(celAlignCenter);
-	    table.getColumnModel().getColumn(1).setPreferredWidth(10);
-	    table.getColumnModel().getColumn(1).setCellRenderer(celAlignCenter);
-	    table.getColumnModel().getColumn(2).setPreferredWidth(10);
-	    table.getColumnModel().getColumn(2).setCellRenderer(celAlignCenter);
-	    table.getColumnModel().getColumn(3).setPreferredWidth(10);
-	    table.getColumnModel().getColumn(3).setCellRenderer(celAlignCenter);
-	    table.getColumnModel().getColumn(4).setPreferredWidth(20);
-	    table.getColumnModel().getColumn(4).setCellRenderer(celAlignCenter);
-	    table.getColumnModel().getColumn(5).setPreferredWidth(20);
-	    table.getColumnModel().getColumn(5).setCellRenderer(celAlignCenter);*/
+	    
 	  } // jTableRefresh : 테이블 옵션 설정하는 메서드
 	
 	public void contentSet() {

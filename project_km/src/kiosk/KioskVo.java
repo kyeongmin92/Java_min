@@ -1,4 +1,4 @@
-package kiosk_2;
+package kiosk;
 
 public class KioskVo {
 	

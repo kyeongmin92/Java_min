@@ -1,4 +1,4 @@
-package kiosk_2;
+package $0615;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -82,35 +82,26 @@ public class KioskDao {
 	}
 
 	public int insertProduct(KioskVo dto) {
-		Connection con = null;
-		PreparedStatement ps = null;
+		/*Connection con = null;
+		PreparedStatement pstmt = null;*/
 		int result = 0;
 		try {
 			con = getconnect();
 			String sql = "insert into product values (?,?,?)";
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, dto.getKind());
-			ps.setString(2, dto.getMenu());
-			ps.setInt(3, dto.getPrice());
-			result = ps.executeUpdate();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, dto.getKind());
+			pstmt.setString(2, dto.getMenu());
+			pstmt.setInt(3, dto.getPrice());
+			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (ps != null) {
-				try {
-					ps.close();
-				} catch (SQLException e2) {
-					e2.printStackTrace();
-				} // ps try - catch
-			} // ps if
-			if (con != null) {
-				try {
-					con.close();
-				} catch (SQLException e2) {
-					e2.printStackTrace();
-				} // con try - catch
-			} // con if
-		} // try - catch - finally
+			try {
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (Exception e2) {}
+		} 
 		return result;
 	}
 
@@ -138,7 +129,7 @@ public class KioskDao {
 			} // while
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
+		} /*finally {
 			if (rs != null) {
 				try {
 					rs.close();
@@ -160,7 +151,7 @@ public class KioskDao {
 					e2.printStackTrace();
 				} // con try - catch
 			} // con if
-		} // try - catch - finally
+		} // try - catch - finally  주석처리 후 추가 기능 활성됨*/
 		return data;
 	}
 
@@ -179,20 +170,11 @@ public class KioskDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (ps != null) {
-				try {
-					ps.close();
-				} catch (SQLException e2) {
-					e2.printStackTrace();
-				} // ps try - catch
-			} // ps if
-			if (con != null) {
-				try {
-					con.close();
-				} catch (SQLException e2) {
-					e2.printStackTrace();
-				} // con try - catch
-			} // con if
+			try {
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (Exception e2) {}
 		} // try - catch - finally
 		return result;
 	}
@@ -210,20 +192,11 @@ public class KioskDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (ps != null) {
-				try {
-					ps.close();
-				} catch (SQLException e2) {
-					e2.printStackTrace();
-				} // ps try - catch
-			} // ps if
-			if (con != null) {
-				try {
-					con.close();
-				} catch (SQLException e2) {
-					e2.printStackTrace();
-				} // con try - catch
-			} // con if
+			try {
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (Exception e2) {}
 		} // try - catch - finally
 		return result;
 	}

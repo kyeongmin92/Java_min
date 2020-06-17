@@ -1,4 +1,4 @@
-package kiosk;
+package $0615;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -54,8 +54,6 @@ public class JPanel02 extends JPanel {
 	int singleMenu2Price = 8700;
 	int singleMenu3Price = 9000;
 	int singleMenu4Price = 9000;
-	
-	
 
 	public JPanel02(JPanelChange win) {
 		setLayout(null);
@@ -129,7 +127,7 @@ public class JPanel02 extends JPanel {
 		btnAdmin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new loginCheck();
+				new KioskVo();
 			}
 		});
 

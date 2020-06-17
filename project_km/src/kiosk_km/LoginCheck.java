@@ -1,4 +1,4 @@
-package kiosk_2;
+package kiosk_km;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -67,7 +67,7 @@ public class LoginCheck { // 로그인 창이 뜨는 클래스
 				KioskDao dbCheck = new KioskDao(); // KioskDao 클래스를 dbCheck로 선언
 				int login = dbCheck.idCheck(txtId.getText(), txtPw.getText());
 				if (login == 1) { // 로그인 성공 시
-					new ProductList(); // ProductList 클래스 선언 
+					new Admin(); // Admin 클래스 선언 
 				//	JOptionPane.showMessageDialog(null, "로그인 성공");
 					dialog.dispose(); // LoginCheck 클래스의 다이얼로그는 종료
 				} else { // 로그인 실패 시 메시지 출력과 아이디, 비밀번호 초기화

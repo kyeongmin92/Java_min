@@ -1,4 +1,4 @@
-package kiosk;
+package $0615;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,13 +9,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-public class main {
+public class Kioskmain {
 
 	//JPanel pan = new JPanel();
 		JPanelChange win = new JPanelChange();
 		JButton btnAdmin = new JButton("관리자");		
 
-		main() { // 생성자
+		Kioskmain() { // 생성자
 			win.setTitle("Hamburger Kiosk");
 			win.jpanel01 = new JPanel01(win);
 			win.jpanel02 = new JPanel02(win);
@@ -43,7 +43,7 @@ public class main {
 		}
 
 		public static void main(String[] args) {
-			new main();
+			new Kioskmain();
 		}
 
 }

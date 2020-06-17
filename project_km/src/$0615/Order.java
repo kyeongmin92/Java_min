@@ -1,4 +1,4 @@
-package kiosk;
+package $0615;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class Order extends JPanel01{
+public class Order {
    
 	JButton btnOrder = new JButton("주문");
 	JFrame framOrder = new JFrame(); // 주문 버튼 프레임 선언
@@ -20,7 +20,6 @@ public class Order extends JPanel01{
 
    
    public Order() {
-	   super(win);
       dialog.setSize(400, 300); // 다이얼로그의 크기 설정
       dialog.setVisible(true); // 다이얼로그를 표시 해줌
       dialog.setResizable(false); // 창 크기 조절 불가

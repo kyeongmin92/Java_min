@@ -1,4 +1,4 @@
-package kiosk;
+package $0615;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class JPanel03 extends JPanel {
+public class JPanel04 extends JPanel {
 
 	JPanelChange win;
 	JButton btnSetMenu = new JButton("세트메뉴");
@@ -36,25 +36,25 @@ public class JPanel03 extends JPanel {
 	
 	JButton btnOK= new JButton("확인");
 	JButton btnCancel = new JButton("취소");
-	
+
 	JButton btnAdmin = new JButton("관리자");
 
-	ImageIcon img1 = new ImageIcon("images/프렌치프라이.png");
-	ImageIcon img2 = new ImageIcon("images/쉐이킹프라이.png");
-	ImageIcon img3 = new ImageIcon("images/너겟킹.png");
-	ImageIcon img4 = new ImageIcon("images/21치즈스틱.png");
+	ImageIcon img1 = new ImageIcon("images/코카콜라.png");
+	ImageIcon img2 = new ImageIcon("images/스프라이트.png");
+	ImageIcon img3 = new ImageIcon("images/아메리카노.png");
+	ImageIcon img4 = new ImageIcon("images/핫초코.png");
 
-	JLabel side1 = new JLabel(img1);
-	JLabel side2 = new JLabel(img2);
-	JLabel side3 = new JLabel(img3);
-	JLabel side4 = new JLabel(img4);
+	JLabel drink1 = new JLabel(img1);
+	JLabel drink2 = new JLabel(img2);
+	JLabel drink3 = new JLabel(img3);
+	JLabel drink4 = new JLabel(img4);
 	
-	int sideMenu1Price = 2700;
-	int sideMenu2Price = 2500;
-	int sideMenu3Price = 2600;
-	int sideMenu4Price = 2200;
+	int Drink1Price = 2500;
+	int Drink2Price = 2500;
+	int Drink3Price = 2100;
+	int Drink4Price = 2600;
 
-	public JPanel03(JPanelChange win) {
+	public JPanel04(JPanelChange win) {
 		setLayout(null);
 		this.win = win;
 		
@@ -80,21 +80,21 @@ public class JPanel03 extends JPanel {
 		add(btnDrink);
 
 //		pan.setLayout(null);
-//		pan.add(side1);
-		side1.setBounds(10, 50, 137, 130);
-		add(side1);
+//		pan.add(drink1);
+		drink1.setBounds(10, 50, 130, 150);
+		add(drink1);
 
-//		pan.add(side2);
-		side2.setBounds(160, 50, 137, 130);
-		add(side2);
+//		pan.add(drink2);
+		drink2.setBounds(160, 50, 130, 150);
+		add(drink2);
 
-//		pan.add(side3);
-		side3.setBounds(310, 50, 137, 130);
-		add(side3);
+//		pan.add(drink3);
+		drink3.setBounds(310, 50, 130, 150);
+		add(drink3);
 
-//		pan.add(side4);
-		side4.setBounds(460, 50, 137, 130);
-		add(side4);
+//		pan.add(drink4);
+		drink4.setBounds(460, 50, 135, 150);
+		add(drink4);
 
 		btnAdmin.setBounds(630, 10, 80, 20);
 //		pan.add(btnAdmin);
@@ -132,7 +132,7 @@ public class JPanel03 extends JPanel {
 		btnAdmin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new loginCheck();
+				new KioskVo();
 			}
 		});
 
@@ -285,27 +285,27 @@ public class JPanel03 extends JPanel {
 				int icounnt4 = Integer.parseInt(count4);
 				btn4Label.setText(Integer.toString(icounnt4));
 				
-				int sumPrice = (icounnt1*sideMenu1Price)+(icounnt2*sideMenu2Price)+(icounnt3*sideMenu3Price)
-						+(icounnt4*sideMenu4Price);
+				int sumPrice = (icounnt1*Drink1Price)+(icounnt2*Drink2Price)+(icounnt3*Drink3Price)
+						+(icounnt4*Drink4Price);
 				
 				if (!btn1Label.getText().equals("0")) {						
-					win.jpanel05.setTextBox("프렌치프라이  \t" + btn1Label.getText() +"개  \t"+icounnt1*sideMenu1Price+ "원 \n");
+					win.jpanel05.setTextBox("코카콜라  \t" + btn1Label.getText() +"개  \t"+icounnt1*Drink1Price+ "원 \n");
 				}
 				if (!btn2Label.getText().equals("0")) {					
-					win.jpanel05.setTextBox("쉐이킹프라이  \t" + btn2Label.getText() + "개  \t"+icounnt2*sideMenu2Price+ "원 \n");
+					win.jpanel05.setTextBox("스프라이트  \t" + btn2Label.getText() + "개  \t"+icounnt2*Drink2Price+ "원 \n");
 				}
 				if (!btn3Label.getText().equals("0")) {					
-					win.jpanel05.setTextBox("너겟킹  \t" + btn3Label.getText() +"개  \t"+icounnt3*sideMenu3Price+ "원 \n");
+					win.jpanel05.setTextBox("아메리카노  \t" + btn3Label.getText() +"개  \t"+icounnt3*Drink3Price+ "원 \n");
 				}
 				if (!btn4Label.getText().equals("0")) {					
-					win.jpanel05.setTextBox("21치즈스틱  \t" + btn4Label.getText() + "개  \t"+icounnt4*sideMenu4Price+ "원 \n");
+					win.jpanel05.setTextBox("21핫초코  \t" + btn4Label.getText() + "개  \t"+icounnt4*Drink4Price+ "원 \n");
 				}
 
 				if (btn1Label.getText().equals("0") && btn2Label.getText().equals("0")
 						&& btn3Label.getText().equals("0") && btn4Label.getText().equals("0")) {
 					win.jpanel05.setTextBox("주문 내역이 없습니다." + "\n");
 				}
-				win.jpanel05.setTextBox("\n 사이드 합계: "+sumPrice+"원 입니다. \n\n");
+				win.jpanel05.setTextBox("\n 음료 합계: "+sumPrice+"원 입니다. \n\n");
 			}
 		});
 

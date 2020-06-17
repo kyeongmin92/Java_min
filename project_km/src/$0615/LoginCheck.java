@@ -1,4 +1,4 @@
-package kiosk;
+package $0615;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class loginCheck { // 로그인 창이 뜨는 클래스
+public class LoginCheck { // 로그인 창이 뜨는 클래스
 	
 	JFrame frame = new JFrame(""); // 프레임 선언
 	JDialog dialog = new JDialog(frame, "관리자 로그인"); // 다이얼로그 선언
@@ -27,7 +27,7 @@ public class loginCheck { // 로그인 창이 뜨는 클래스
 	JButton btnLogin = new JButton("로그인");
 
 	// GUI 구현 생성자
-	public loginCheck() {
+	public LoginCheck() {
 		dialog.setSize(300, 180); // 다이얼로그의 크기 설정
 		dialog.setVisible(true); // 다이얼로그를 표시 해줌
 		dialog.setResizable(false); // 창 크기 조절 불가
@@ -64,11 +64,12 @@ public class loginCheck { // 로그인 창이 뜨는 클래스
 		btnLogin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dbDao dbCheck = new dbDao(); // dbDao 클래스를 dbCheck로 선언
+				KioskDao dbCheck = new KioskDao(); // KioskDao 클래스를 dbCheck로 선언
 				int login = dbCheck.idCheck(txtId.getText(), txtPw.getText());
 				if (login == 1) { // 로그인 성공 시
-					new admin(); // admin 클래스 선언 
-					dialog.dispose(); // loginCheck 클래스의 다이얼로그는 종료
+					new Admin(); // Admin 클래스 선언 
+				//	JOptionPane.showMessageDialog(null, "로그인 성공");
+					dialog.dispose(); // LoginCheck 클래스의 다이얼로그는 종료
 				} else { // 로그인 실패 시 메시지 출력과 아이디, 비밀번호 초기화
 					JOptionPane.showMessageDialog(null, "로그인 실패");
 					txtId.setText("");

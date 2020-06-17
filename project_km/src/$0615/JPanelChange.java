@@ -1,4 +1,4 @@
-package kiosk;
+package $0615;
 
 import java.awt.GridLayout;
 

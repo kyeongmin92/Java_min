@@ -1,8 +1,7 @@
-package kiosk;
+package $0615;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -12,7 +11,7 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 class JPanel01 extends JPanel { // 1번째 패널
 
-	static JPanelChange win;
+	JPanelChange win;
 	JButton btnSetMenu = new JButton("세트메뉴");
 	JButton btnSingleMenu = new JButton("단품");
 	JButton btnSide = new JButton("사이드");
@@ -136,7 +135,7 @@ class JPanel01 extends JPanel { // 1번째 패널
 		btnAdmin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new loginCheck();
+				new LoginCheck();
 			}
 		});
 		//세트메뉴 클릭시 Jpanel01번 불러옴
