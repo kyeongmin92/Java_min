@@ -5,8 +5,7 @@ public class Star1 {
 	public static void main(String[] args) {
 		/*  중첩 for문 이용해서  출력
 		      *
-		     **
-		     *
+		     **		     
 		    ***
 		   ****
 		  *****     */

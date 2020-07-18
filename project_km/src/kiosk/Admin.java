@@ -41,7 +41,7 @@ public class Admin extends JFrame implements ActionListener, MouseListener {
 		// 분류번호
 		add(jlKind = new JLabel("분류번호", JLabel.CENTER));
 		jlKind.setFont(new Font("맑은 고딕", Font.BOLD, 20));
-		jlKind.setBorder(BorderFactory.createBevelBorder(0));
+	//	jlKind.setBorder(BorderFactory.createBevelBorder(0));
 		jlKind.setBounds(10, 10, 120, 50);
 		add(jtKind = new JTextField());
 		jtKind.setFont(new Font("맑은 고딕", Font.BOLD, 20));
@@ -51,7 +51,7 @@ public class Admin extends JFrame implements ActionListener, MouseListener {
 		// 메뉴
 		add(jlMenu = new JLabel("메뉴", JLabel.CENTER));
 		jlMenu.setFont(new Font("맑은 고딕", Font.BOLD, 20));
-		jlMenu.setBorder(BorderFactory.createBevelBorder(0));
+	//	jlMenu.setBorder(BorderFactory.createBevelBorder(0));
 		jlMenu.setBounds(10, 70, 120, 50);
 		add(jtMenu = new JTextField());
 		jtMenu.setFont(new Font("맑은 고딕", Font.BOLD, 20));
@@ -61,7 +61,7 @@ public class Admin extends JFrame implements ActionListener, MouseListener {
 		// 가격
 		add(jlPrice = new JLabel("가격", JLabel.CENTER));
 		jlPrice.setFont(new Font("맑은 고딕", Font.BOLD, 20));
-		jlPrice.setBorder(BorderFactory.createBevelBorder(0));
+	//	jlPrice.setBorder(BorderFactory.createBevelBorder(0));
 		jlPrice.setBounds(10, 130, 120, 50);
 		add(jtPrice = new JTextField());
 		jtPrice.setFont(new Font("맑은 고딕", Font.BOLD, 20));
